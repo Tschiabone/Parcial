@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/img/Proyecto nuevo (2).png" type="image/webp">
+    <title>Schiabone Tomás, Carrizo Carolina Belen -486899 2024-2c - Tuno: Noche </title>
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/img/Proyecto nuevo (2).png" class="img-fluid" alt="logo" style="height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cafes.html">Tipos de Café</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/preguntas.html">Preguntas frecuentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Encabezado de la página -->
+    <div class="container my-4">
+        <h2 class="text-center font-weight-bold" style="font-family: 'Lobster', cursive;">Nuestros Cafés</h2>
+        <div class="d-flex justify-content-center flex-wrap filter-buttons">
+            <button class="btn btn-outline-dark mx-1 my-1 filter-btn" onclick="filterCoffee('todos')">Todos</button>
+            <button class="btn btn-outline-dark mx-1 my-1 filter-btn" onclick="filterCoffee('intenso')">Intensos</button>
+            <button class="btn btn-outline-dark mx-1 my-1 filter-btn" onclick="filterCoffee('suave')">Suaves</button>
+            <button class="btn btn-outline-dark mx-1 my-1 filter-btn" onclick="filterCoffee('especial')">Especiales</button>
+        </div>
+        <div class="d-md-none text-center my-3">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#cartModal">Ver Carrito</button>
+        </div>
+        
+    </div>
+
+    <!-- Productos de café -->
+    <div class="container">
+        <div id="coffeeList" class="row">
+            <!-- Bloques de productos -->
+            <div class="col-md-4 coffee-item intenso my-3">
+                <div class="card">
+                    <img src="/img/cafes/sombras.jpg" class="card-img-top" alt="Café Intenso"> 
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sombras del Valle</h5>
+                        <p class="card-text">$20.00</p>
+                        <button class="btn btn-dark add-to-cart" data-name="Sombras del Valle" data-price="20">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 coffee-item intenso my-3">
+                <div class="card">
+                    <img src="/img/cafes/cima.jpg" class="card-img-top" alt="Café Intenso"> 
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Cima de Fuego</h5>
+                        <p class="card-text">$22.00</p>
+                        <button class="btn btn-dark add-to-cart" data-name="Cima de Fuego" data-price="22">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 coffee-item intenso my-3">
+                <div class="card">
+                    <img src="/img/cafes/amanecer.jpg" class="card-img-top" alt="Café Intenso"> 
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Amanecer Profundo</h5>
+                        <p class="card-text">$19.00</p>
+                        <button class="btn btn-dark add-to-cart" data-name="Amanecer Profundo" data-price="19">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 coffee-item intenso my-3">
+                <div class="card">
+                    <img src="/img/cafes/oscuridad.jpeg" class="card-img-top" alt="Café Intenso"> 
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Oscuridad Africana</h5>
+                        <p class="card-text">$21.00</p>
+                        <button class="btn btn-dark add-to-cart" data-name="Oscuridad Africana" data-price="21">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 coffee-item suave my-3">
+                <div class="card">
+                    <img src="/img/cafes/brisa.jpg" class="card-img-top" alt="Café Suave"> 
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Brisa Dorada</h5>
+                        <p class="card-text">$18.00</p>
+                        <button class="btn btn-dark add-to-cart" data-name="Brisa Dorada" data-price="18">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 coffee-item suave my-3">
+                <div class="card">
+                    <img src="/img/cafes/sol.jpg" class="card-img-top" alt="Café Suave"> 
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sol Pacífico</h5>
+                        <p class="card-text">$19.00</p>
+                        <button class="btn btn-dark add-to-cart" data-name="Sol Pacífico" data-price="19">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 coffee-item suave my-3">
+                <div class="card">
+                    <img src="/img/cafes/aurora.jpg" class="card-img-top" alt="Café Suave"> 
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Aurora Frutal</h5>
+                        <p class="card-text">$18.00</p>
+                        <button class="btn btn-dark add-to-cart" data-name="Aurora Frutal" data-price="18">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 coffee-item suave my-3">
+                <div class="card">
+                    <img src="/img/cafes/sabores.jpeg" class="card-img-top" alt="Café Suave"> 
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Sabores del Sur</h5>
+                        <p class="card-text">$17.00</p>
+                        <button class="btn btn-dark add-to-cart" data-name="Sabores del Sur" data-price="17">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 coffee-item especial my-3">
+                <div class="card">
+                    <img src="/img/cafes/Perla.jpg" class="card-img-top" alt="Café Especial"> 
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Perla del Paraíso</h5>
+                        <p class="card-text">$35.00</p>
+                        <button class="btn btn-dark add-to-cart" data-name="Perla del Paraíso" data-price="35">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Carrito de compras flotante -->
+    <div id="cart" class="cart">
+        <h5>Carrito</h5>
+        <ul id="cartItems"></ul>
+        <p>Total: $<span id="cartTotal">0</span></p>
+        <button class="btn btn-success" onclick="$('#checkoutModal').modal('show')">Comprar</button>
+        <button class="btn btn-danger" onclick="clearCart()">Vaciar Carrito</button>
+    </div>
+
+    <!-- Modal de Carrito para dispositivos móviles -->
+    <div id="cartModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Carrito</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="modalCartItems"></ul> <!-- Cambiado a modalCartItems -->
+                    <p>Total: $<span id="modalCartTotal">0</span></p> <!-- Cambiado a modalCartTotal -->
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" onclick="$('#checkoutModal').modal('show')">Comprar</button>
+                    <button class="btn btn-danger" onclick="clearCart()">Vaciar Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Modal para la compra -->
+    <div id="checkoutModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Finalizar Compra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul id="modalCartItems"></ul>
+                    <form id="checkoutForm" class="form-group">
+                        <input type="text" class="form-control my-2" placeholder="Nombre" required>
+                        <input type="email" class="form-control my-2" placeholder="Correo Electrónico" required>
+                        <input type="text" class="form-control my-2" placeholder="Dirección" required>
+                        <input type="tel" class="form-control my-2" placeholder="Teléfono" required>
+                        <textarea class="form-control my-2" placeholder="Notas adicionales" rows="2"></textarea>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary confirm-purchase">Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación de Compra -->
+<div id="successModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">¡Compra Exitosa!</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Gracias por tu compra. Te hemos enviado un correo electrónico con los detalles de tu pedido.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Pie de página -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Datos Personales y de Cursada -->
+                <div class="col-md-4">
+                    <h5>Datos de Cursada</h5>
+                    <ul class="list-unstyled">
+                        <li>Nombres: Schiabone Tomás, Carrizo Carolina Belen</li>
+                        <li>Materia: Diseño y desarrollo web </li>
+                        <li>Comisión:486899 2024-2c </li>
+                        <li>Año de Cursada: 2024</li>
+                    </ul>
+                </div>
+                <!-- Redes Sociales -->
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    </ul>
+                </div>
+                <!-- Mapa del sitio -->
+                <div class="col-md-4">
+                    <h5>Mapa del Sitio</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="cafes.html">Tipos de Café</a></li>
+                        <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+        <div class="text-center mt-3">
+            <p>&copy; 2024 Punto de Café. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Icono de WhatsApp en la parte inferior derecha -->
+    <a href="https://wa.me/123456789" class="whatsapp-icon" target="_blank">
+        <img src="/img/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.webp" alt="WhatsApp" />
+    </a>
+
+    <!-- Scripts de Bootstrap y jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let cart = []; // Variable global para almacenar los productos
+
+        function clearCart() {
+            cart.length = 0; // Vacía el array del carrito
+            updateCart(); // Actualiza ambos carritos
+        }
+
+        function updateCart() {
+            let cartItems = $('#cartItems'); // Carrito flotante
+            let modalCartItems = $('#modalCartItems'); // Carrito modal
+            let cartTotal = $('#cartTotal'); // Total del carrito flotante
+            let modalCartTotal = $('#modalCartTotal'); // Total del carrito modal
+
+            cartItems.empty(); // Limpia la lista del carrito flotante
+            modalCartItems.empty(); // Limpia la lista del carrito modal
+
+            let total = 0;
+            cart.forEach(item => {
+                total += item.price;
+                cartItems.append(`<li>${item.name} - $${item.price}</li>`);
+                modalCartItems.append(`<li>${item.name} - $${item.price}</li>`);
+            });
+
+            cartTotal.text(total); // Actualiza el total en el carrito flotante
+            modalCartTotal.text(total); // Actualiza el total en el carrito modal
+        }
+
+        $(document).ready(function() {
+            // Añadir productos al carrito
+            $('.add-to-cart').click(function() {
+                let name = $(this).data('name');
+                let price = parseInt($(this).data('price'));
+                cart.push({ name, price });
+                updateCart();
+            });
+
+            // Filtrar productos
+            window.filterCoffee = function(type) {
+                $('.coffee-item').each(function() {
+                    $(this).toggle(type === 'todos' || $(this).hasClass(type));
+                });
+            };
+
+            // Confirmar compra
+            $('.confirm-purchase').click(function() {
+                if ($('#checkoutForm')[0].checkValidity()) {
+                    $('#checkoutModal').modal('hide');
+                    $('#successModal').modal('show');
+                    clearCart(); // Vacía el carrito después de la compra
+                } else {
+                    $('#checkoutForm').addClass('was-validated');
+                }
+            });
+        });
+
+    </script>
+</body>

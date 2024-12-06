@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sobre Nosotros - Café de Especialidad</title>
+</head>
+<body>
+    <!-- Menú de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="/img/Proyecto nuevo (2).png" class="img-fluid" alt="logo" style="height: 50px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros.html">Sobre Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="cafes.html">Tipos de Café</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/preguntas.html">Preguntas frecuentes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--icono de whatsapp-->
+    <a href="https://wa.me/123456789" class="whatsapp-icon" target="_blank">
+        <img src="/img/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.webp" alt="WhatsApp" />
+    </a>
+    <section class="faq-section py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">Preguntas Frecuentes</h1>
+            
+            <div class="faq-item">
+                <h5 class="faq-question" onclick="toggleAnswer(1)">¿Cuáles son los métodos de pago?</h5>
+                <p class="faq-answer" id="answer1">Aceptamos tarjetas de crédito, débito, transferencias bancarias y pagos en efectivo en nuestras tiendas físicas.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h5 class="faq-question" onclick="toggleAnswer(2)">¿Cómo puedo hacer un pedido en línea?</h5>
+                <p class="faq-answer" id="answer2">Para hacer un pedido en línea, elije tu producto y contactate con nosotros via whatsapp.</p>
+            </div>
+            
+            <div class="faq-item">
+                <h5 class="faq-question" onclick="toggleAnswer(3)">¿Cuáles son los tiempos de entrega?</h5>
+                <p class="faq-answer" id="answer3">Los tiempos de entrega varían según la ubicación, pero generalmente oscilan entre 3 y 5 días hábiles.</p>
+            </div>
+            
+        </div>
+    </section>
+    <!-- Pie de página -->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Datos Personales y de Cursada -->
+                <div class="col-md-4">
+                    <h5>Datos de Cursada</h5>
+                    <ul class="list-unstyled">
+                        <li>Nombres: Schiabone Tomás, Carrizo Carolina Belen</li>
+                        <li>Materia: Diseño y desarrollo web </li>
+                        <li>Comisión:486899 2024-2c </li>
+                        <li>Año de Cursada: 2024</li>
+                    </ul>
+                </div>
+                <!-- Redes Sociales -->
+                <div class="col-md-4">
+                    <h5>Redes Sociales</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                        <li><a href="https://wa.me/1234567890" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    </ul>
+                </div>
+                <!-- Mapa del sitio -->
+                <div class="col-md-4">
+                    <h5>Mapa del Sitio</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="nosotros.html">Sobre Nosotros</a></li>
+                        <li><a href="cafes.html">Tipos de Café</a></li>
+                        <li><a href="preguntas.html">Preguntas Frecuentes</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Función para mostrar u ocultar la respuesta
+        function toggleAnswer(id) {
+            const answer = document.getElementById(`answer${id}`);
+            answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Ocultar todas las respuestas inicialmente
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".faq-answer").forEach(answer => answer.style.display = "none");
+        });
+    </script>
+</body>
+</html>
+
